@@ -4,20 +4,21 @@ import java.util.Scanner;
 
 public class Palindrome {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a number: ");
         int n = input.nextInt();
-        int sum = 0, r;
-	      int temp = n;    
-        while(n>0)
-	        {    
-          r = n % 10;   
-          sum = (sum*10)+r;    
-          n = n/10;    
-          }    
-        if(temp==sum)    
-          System.out.println("Palindrome number");
-        else    
-          System.out.println("Not a palindrome number"); 
+        int sum = 0;
+        int temp = n;
+        boolean is_palindrome = true;
+        while (n!=0) {
+            int a = n % 10;
+            sum = (sum*10) + a;
+            n = n / 10;
+        }
+
+        if (temp != sum) {
+            is_palindrome = false;
+        }
+
+        System.out.println("Palindrome: " + is_palindrome);
+    
     }
 }
